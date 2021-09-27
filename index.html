@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/b6b6c2826a.js" crossorigin="anonymous"></script>
-    <title>Bootstrap - Prebuilt Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="JS/login.js"></script>
+</head>
+<body onresize="changeColor ()">
+    <div id="outerbox">
+        <div id="innerbox">
+            <form onsubmit= "login ()">
+                <h2>Login</h2><br>
 
-    <!-- Bootstrap -->
-    <link href="CSS/index.css" rel="stylesheet">
+                <!--Entering Username-->
+                <input  
+                id ="user" 
+                class ="input" 
+                type = "text" 
+                placeholder ="  Username" 
+                pattern ="[A-Za-z0-9]{3,}" 
+                onclick = "inputData ()"
+                ><br><br>
 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body">
-       <a class="navbar-brand" href="#"><img src="images/RFLOGO2.png" width="250px" height="60px"></a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-       </button>
-    </nav>
+                <!--Entering Password-->
+                <input  
+                id ="pwd" 
+                class ="input" 
+                type ="password"  
+                placeholder ="  Password"  
+                pattern ="[A-Za-z0-9]{3,}" 
+                ><br><br>
 
-    <div class="sidebar"><br>
-        <a href="create.html"><i class="far fa-file" style="font-size:40px;color:white"></i><br>Create</a>
-        <a href="view.html"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
-        <a href="#" onclick="changeMode()"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Night Mode</a>
+                <!--Sign in button-->
+                <input 
+                id="submit" 
+                type= "submit" 
+                value="Sign in"><br><br>
+
+                <a id="recover" href="#">Lost your Password?</a><br><br>
+               
+            </form>    
+        </div>
+
+        <img src="images/RFLOGO2.png" width="200px" height="50px">
     </div>
-
-    <div class="mainbutton">
-        <a href="create.html"><button><i class="far fa-file" style="font-size:150px;color:white"></i><br><br>CREATE NEW REPORT</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="view.html"><button><i class="far fa-folder-open" style="font-size:150px;color:white"></i><br><br>VIEW EXISTING REPORTS</button></a>
-    </div>
-
-  </body>
+</body>
 </html>
