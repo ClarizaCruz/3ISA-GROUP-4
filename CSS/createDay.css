@@ -60,6 +60,13 @@
     text-decoration: none;
  
   }
+
+  .sidebar .active {
+    background-color: #737373;
+    color: white;
+    text-decoration: none;
+ 
+  }
     .tables{
         width: 93%;
         display: block;
