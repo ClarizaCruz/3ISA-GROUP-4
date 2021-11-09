@@ -1,24 +1,8 @@
 //imports
-const express =  require('express')
-const mysql = require('mysql');
+const express =  require('express');
 
 const port = process.env.PORT || 3000
 const app = express();
-
-
-//connect the node app with MySql server
-const con = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "Clariza0421!",
-});
-
-con.connect((err) => {
-  if (!err){
-      console.log("connected to MySql server at port 3306...");
-  }
-});
 
 
 //static files
