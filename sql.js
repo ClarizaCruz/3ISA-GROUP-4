@@ -1,5 +1,5 @@
 //connect to our node app
-const express =  require('express');
+/*const express =  require('express');
 const mysql = require('mysql');
 
 const PORT = process.env.PORT || 3000;
@@ -18,10 +18,10 @@ con.connect((err) => {
     if (!err){
         console.log("Connected to MySql server at port 3306...");
     }
-});
+});*/
 
 //create a database
-app.get("/create-transactiondb", (req, res) => {
+/*app.get("/create-transactiondb", (req, res) => {
     let sql = "CREATE DATABASE transaction";
     con.query(sql,(err,result) => {
         if(!err){
@@ -92,7 +92,7 @@ app.get("/call-transactions2", (req,res) => {
 
 app.listen(PORT,() => {
     console.log("listening to port " + PORT + "...");
-});
+});*/
 
 
 
