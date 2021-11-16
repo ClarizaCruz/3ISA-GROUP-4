@@ -39,23 +39,23 @@
     margin: 0;
     padding: 0;
     width: 100px;
-    background-color: #15aabf;
+    background-color: #65bdca;
     position: fixed;
     height: 100%;
     overflow: auto;
     text-align: center;
-    border-right: 4px solid #737373 ;
+    border-right: 4px solid #bdbbbb ;
   }
   
   .sidebar a {
     display: block;
-    color: #403c3c;
+    color: rgba(245, 250, 252, 0.308);
     padding: 16px;
     text-decoration: none;
   }
   
   .sidebar a:hover:not(.active) {
-    background-color: #737373;
+    background-color: rgba(245, 250, 252, 0.308);
     color: white;
     text-decoration: none;
   }
@@ -287,7 +287,7 @@
   button {
     border-radius: 10px;
     background-color: #fffbfb ;
-    border: 7px dashed #545454;
+    border: 5px solid #a8a8a8cc;
     padding: 30px;
     text-align: center;
     width: 300px;

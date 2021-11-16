@@ -10,6 +10,10 @@ router.get('/homepage.html',(req, res) => {
     res.render("homepage");
   })
 
+router.get('/homeDay.html',(req, res) => {
+    res.render("homeDay");
+  })
+
 router.get('/create.html',(req, res) => {
     res.render("create");
   })
