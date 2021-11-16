@@ -75,8 +75,8 @@
 
 	.container {
 	  padding: 5px 20px 15px 20px;
-	  border: 1px solid lightgrey;
-	  border-radius: 3px;
+	  border: 3px solid lightgrey;
+	  border-radius: 8px;
 	}
 
 	input[type=text] {
@@ -116,7 +116,7 @@
 	}
 
 	.btn1 {
-	  background-color: #27c001;
+	  background-color: #27c001cc;
 	  color: white;
 	  padding: 12px;
 	  margin: 10px 0;
@@ -127,12 +127,12 @@
 	  font-size: 17px;
 	}
 
-	.btn:hover {
-	  background-color: #45a049;
+	.btn1:hover {
+	  background-color: #43a047;
 	}
 
   .btn2 {
-	  background-color: #e70909;
+	  background-color: #e70909cb;
 	  color: white;
 	  padding: 12px;
 	  margin: 10px 0;
