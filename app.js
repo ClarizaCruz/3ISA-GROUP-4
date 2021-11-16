@@ -20,6 +20,9 @@ const con = mysql.createConnection({
 
 const publicDirectory = path.join(__dirname, './public' );
 app.use(express.static(publicDirectory));
+
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
 app.set('view engine', 'hbs');
 
 con.connect((err) => {
@@ -29,9 +32,10 @@ con.connect((err) => {
 });
 
 app.use('/', require('./routes/pages'));
+app.use('/forms', require('./routes/forms'));
 
 //listen on port 3000
-app.listen(port,() => console.info(`Listening on port ${port}`))
+app.listen(port,() => console.info(`Listening on port ${port}`));
 
 
 

@@ -4,36 +4,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- :root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #007bff;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  }
+
   
   .sidebar {
     margin: 0;
@@ -66,49 +37,135 @@
     color: white;
     text-decoration: none;
   }
-  
-  .tables{
-      width: 93%;
-      display: block;
-      float:right;
-      text-align: center;
-      margin-left: 20px;
+
+  /*FORM*/
+  .dropdown-menu, .dropdown-item{
+    background-color: #DBC386;
+    color: #664A0D;
+    }
+	
+		.row1 {
+	  display: -ms-flexbox; /* IE10 */
+	  display: flex;
+	  -ms-flex-wrap: wrap; /* IE10 */
+	  flex-wrap: wrap;
+	  margin: 0 -16px;
+	}
+
+	.col-25 {
+	  -ms-flex: 25%; /* IE10 */
+	  flex: 25%;
+	}
+
+	.col-50 {
+	  -ms-flex: 50%; /* IE10 */
+	  flex: 50%;
+	}
+
+	.col-75 {
+	  -ms-flex: 75%; /* IE10 */
+	  flex: 75%;
+	}
+
+	.col-25,
+	.col-50,
+	.col-75 {
+	  padding: 0 16px;
+	}
+
+	.container {
+	  padding: 5px 20px 15px 20px;
+	  border: 1px solid lightgrey;
+	  border-radius: 3px;
+	}
+
+	input[type=text] {
+	  width: 100%;
+	  margin-bottom: 20px;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 3px;
+	}
+
+  input[type=date] {
+	  width: 100%;
+	  margin-bottom: 20px;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 3px;
+	}
+
+
+  input[type=number] {
+	  width: 100%;
+	  margin-bottom: 20px;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 3px;
+	}
+
+	label {
+	  margin-bottom: 10px;
+	  display: block;
+	}
+
+	.icon-container {
+	  margin-bottom: 20px;
+	  padding: 7px 0;
+	  font-size: 24px;
+	}
+
+	.btn1 {
+	  background-color: #27c001;
+	  color: white;
+	  padding: 12px;
+	  margin: 10px 0;
+	  border: none;
+	  width: 100%;
+	  border-radius: 3px;
+	  cursor: pointer;
+	  font-size: 17px;
+	}
+
+	.btn:hover {
+	  background-color: #45a049;
+	}
+
+  .btn2 {
+	  background-color: #e70909;
+	  color: white;
+	  padding: 12px;
+	  margin: 10px 0;
+	  border: none;
+	  width: 100%;
+	  border-radius: 3px;
+	  cursor: pointer;
+	  font-size: 17px;
+	}
+
+	.btn2:hover {
+	  background-color: #921612;
+	}
+
+	span.price {
+	  float: right;
+	  color: grey;
+	}
+
+  .bg-custom{
+    background-color: rgb(116, 115, 115);
+    color:white;
   }
 
-  table, th, td{
-      border: 3px solid white;
-      text-align: center;
-      color: white;
-  }
-
-  #month{
-        border-radius: 0px;
-        width: 150px;
-        height: 50px;
-        color: black;
-        display: block;
-        position: fixed;
-        margin-left: 130px;
-  }
-
-  #week{
-    border-radius: 0px;
-    width: 150px;
-    height: 50px;
-    color: black;
-    display: block;
-    position: fixed;
-    margin-left: 300px;
-}
-
-
-
-
-
-  
-
-
-
+	/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+	@media (max-width: 800px) {
+	  .row {
+		flex-direction: column-reverse;
+	  }
+	  .col-25 {
+		margin-bottom: 20px;
+	  }
+	}
 
   /*PRE-BUILT CSS*/
   .Dark-mode-body {
@@ -118,10 +175,7 @@
   .Dark-sidebar {
       background-color: #545454;
   }
-  
-  .bg-custom {
-      background-color: #FFF8EC;
-  }
+
   
   .bg-custom2{
       background-color: #DFCEAA;

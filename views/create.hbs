@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/b6b6c2826a.js" crossorigin="anonymous"></script>
+    <title>Create</title>
+
+    <!-- Bootstrap -->
+    <link href="/CSS/create.css" rel="stylesheet">
+    <script src="/JS/create.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body">
+       <a class="navbar-brand" href="homepage.html"><img src="/images/RFLOGO2.png" width="250px" height="60px"></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+    </nav>
+
+    <div class="sidebar"><br>
+        <a class ="active" href="#"><i class="far fa-file" style="font-size:40px;color:white"></i><br>Create</a>
+        <a href="view.html"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
+        <a href="createDay.html"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Night Mode</a>
+    </div>
+
+        <div class="container bg-custom mt-5 pt-3">
+		
+		<br><h1>Create Reports</h1><hr>
+
+    {{#if message}}
+      <h4>{{message}}</h4>
+    {{/if}}
+			
+		<div class="row1">
+		  <div class="col-75">
+			<div class="container">
+			  <form action="/forms/create" method="POST"><br>
+
+				<div class="row">
+				  <div class="col-50">
+					<label for="Date">Date</label>
+					<input type="date" id="date" name="Date"></div>
+
+          <div class="col-50">
+					<label for="Week">Week</label>
+					<input type="text" id="Week" name="Week"></div>
+        </div>
+
+        <div class="row">
+				  <div class="col-50">
+					<label for="Sales Invoice No.">Sales Invoice No.</label>
+					<input type="text" id="Invoice_No" name="Invoice_No"></div>
+
+          <div class="col-50">
+					<label for="Tin">Tin</label>
+					<input type="text" id="Tin" name="Tin"></div>
+        </div>
+
+        <div class="row">
+				  <div class="col-50">
+					<label for="Quantity">Quantity</label>
+					<input type="text" id="Quantity" name="Quantity"></div>
+
+          <div class="col-50">
+					<label for="Unit Price">Unit Price</label>
+					<input type="text" id="Unit_Price" name="Unit_Price"></div>
+        </div>
+
+        <div class="row">
+				  <div class="col-50">
+					<label for="Calculation">Calculation</label>
+					<input type="text" id="Calculation" name="Calculation"></div>
+
+          <div class="col-50">
+					<label for="Total Sale">Total Sale</label>
+					<input type="number" id="Total_Sale" name="Total_Sale"></div>
+        </div>
+
+
+				  </div>
+          <div class="row">
+				  <div class="col-50">
+            <input type="submit" value="Save" class="btn1">
+					</div>
+
+          <div class="col-50">
+            <input type="reset" value="Cancel" class="btn2">
+					</div> 
+          </div>
+				
+
+
+				</div>
+			  </form>
+			</div>
+		  </div>
+    
+
+  </body>
+</html>
