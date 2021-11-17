@@ -22,4 +22,12 @@ router.get('/createDay.html',(req, res) => {
     res.render("createDay");
   })
 
+router.get('/view.html',(req, res) => {
+    res.render("view");
+  })
+
+router.get('/viewDay.html',(req, res) => {
+    res.render("viewDay");
+  })
+
 module.exports = router;

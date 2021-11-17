@@ -1,4 +1,7 @@
 const mysql = require('mysql');
+const express = require('express');
+
+const app = express();
 
 //connect the node app with MySql server
 const con = mysql.createConnection({
@@ -19,11 +22,6 @@ exports.create = (req,res) =>{
             console.log(error);
         }
 
-        if (results.length > 0){
-            return res.render('create', {
-                message: 'Report already exist'
-            })
-        }
     });
 
     con.query('INSERT INTO transaction SET ?', {
@@ -38,6 +36,7 @@ exports.create = (req,res) =>{
             if(error){
                 console.log(error);
             }else{
+                res.redirect("/create.html")
                 return res.render('create',{
                     message: 'You have successfully created a report'
                 })
