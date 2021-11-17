@@ -48,6 +48,10 @@
   border-right: 4px solid #625b5b ;
 }
 
+h6{
+  color:black;
+}
+
 .sidebar a {
   display: block;
   color: white;
