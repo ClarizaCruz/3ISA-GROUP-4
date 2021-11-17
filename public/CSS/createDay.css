@@ -37,6 +37,7 @@
   
   .sidebar {
     margin: 0;
+    margin-top: -16px;
     padding: 0;
     width: 100px;
     background-color: #65bdca;
@@ -4561,7 +4562,8 @@
   }
   
   .navbar {
-    position: relative;
+    position: fixed;
+    width: 100%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;

@@ -9,11 +9,6 @@ dotenv.config({path: './.env'});
 const port = process.env.PORT || 3000
 const app = express();
 
-/*const data = {
-  headers: {}
-
-}*/
-
 //connect the node app with MySql server
 const con = mysql.createConnection({
   host: process.env.HOSTNAME,
