@@ -1,41 +1,48 @@
 //imports
 const express =  require('express');
+const exphbs = require('express-handlebars');
+//const bodyParser = require('body-parser');
 const path = require('path');
 const mysql = require('mysql');
-const dotenv = require('dotenv');
 
 
-dotenv.config({path: './.env'});
+require('dotenv').config();
+
+//dotenv.config({path: './.env'});
 const port = process.env.PORT || 3000
 const app = express();
 
-//connect the node app with MySql server
-const con = mysql.createConnection({
-  host: process.env.HOSTNAME,
-  port: 3306,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE
-});
-
+//Static Files
 const publicDirectory = path.join(__dirname, './public' );
 app.use(express.static(publicDirectory));
 
-app.use(express.urlencoded({ extended: false}));
+//Middleware
+app.use(express.urlencoded({ extended: true}));
+
+//Parsing application/json
 app.use(express.json());
+
+//templating engine
+app.engine('hbs', exphbs({ extname: '.hbs'}));
 app.set('view engine', 'hbs');
 
-con.connect((err) => {
-  if (!err){
-      console.log("Connected to MySql server at port 3306...");
-  }
-});
 
-app.use('/', require('./routes/pages'));
-app.use('/forms', require('./routes/forms'));
+app.use('/', require('./server/routes/pages'));
+
+const create = require('./server/routes/create');
+app.use('/', create);
+
+const CD = require('./server/routes/createDay');
+app.use('/', CD);
+
+const routes = require('./server/routes/view');
+app.use('/', routes);
+
+const VD = require('./server/routes/viewDay');
+app.use('/', VD);
 
 //listen on port 3000
-app.listen(port,() => console.info(`Listening on port ${port}`));
+app.listen(port, () => console.log(`Listening on port ${port}`));
 
 
 

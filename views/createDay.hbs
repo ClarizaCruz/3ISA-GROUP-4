@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark day-mode-body">
-       <a class="navbar-brand" href="homeDay.html"><img src="/images/RFLOGO3.png" width="250px" height="60px"></a>
+       <a class="navbar-brand" href="homeDay"><img src="/images/RFLOGO3.png" width="250px" height="60px"></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
        </button>
@@ -24,22 +24,18 @@
 
     <div class="sidebar"><br>
         <a class ="active" href="#"><i class="far fa-file" style="font-size:40px;color:white"></i><br>Create</a>
-        <a href="viewDay.html"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
-        <a href="create.html"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Day Mode</a>
+        <a href="viewDay"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
+        <a href="create"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Day Mode</a>
     </div>
 
   <div class="container bg-custom mt-5 pt-3">
 		
 		<br><h1>Create Reports</h1><hr>
 
-    {{#if message}}
-      <h4>{{message}}</h4>
-    {{/if}}
-			
 		<div class="row1">
 		  <div class="col-75">
 			<div class="container">
-			  <form action="/forms/create" method="POST"><br>
+			  <form action="/createDay" method="POST"><br>
 
 				<div class="row">
 				  <div class="col-50">
