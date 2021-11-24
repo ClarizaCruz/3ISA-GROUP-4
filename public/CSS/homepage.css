@@ -48,6 +48,10 @@
   border-right: 4px solid #625b5b ;
 }
 
+h6{
+  color:black;
+}
+
 .sidebar a {
   display: block;
   color: white;
@@ -284,7 +288,7 @@ label {
 button {
   border-radius: 10px;
   background-color: #403c3c ;
-  border: 7px dashed #545454;
+  border: 7px solid #545454;
   padding: 30px;
   text-align: center;
   width: 300px;
