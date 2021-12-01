@@ -22,3 +22,16 @@ exports.view = (req, res) => {
     console.log('The data from user table: \n', rows);
   });
 }
+
+exports.find = (req, res) => {
+  let searchTerm = req.body.search;
+  // User the connection
+  connection.query('SELECT * FROM transaction WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
+    if (!err) {
+      res.render('view', { rows });
+    } else {
+      console.log(err);
+    }
+    console.log('The data from user table: \n', rows);
+  });
+}
