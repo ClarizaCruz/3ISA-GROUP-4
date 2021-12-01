@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="/CSS/index.css">
-    <script src="/JS/login.js"></script>
 </head>
 <body onresize="changeColor ()">
     <div id="outerbox">
         <div id="innerbox">
-            <form>
+            <form action="/" method="POST">
                 <h2>Login</h2><br>
 
                 <!--Entering Username-->
@@ -19,6 +18,7 @@
                 id ="user" 
                 class ="input" 
                 type = "text" 
+                name = "username"
                 placeholder ="  Username" 
                 pattern ="[A-Za-z0-9]{3,}" 
                 onclick = "inputData ()"
@@ -29,6 +29,7 @@
                 id ="pwd" 
                 class ="input" 
                 type ="password"  
+                name = "password"
                 placeholder ="  Password"  
                 pattern ="[A-Za-z0-9]{3,}" 
                 ><br><br>
