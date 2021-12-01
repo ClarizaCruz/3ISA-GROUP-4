@@ -11,7 +11,7 @@ let connection = mysql.createConnection({
 exports.create = (req,res) =>{
     console.log(req.body);
 
-    const {Date, Week, Invoice_No, Tin, Quantity, Unit_Price, Calculation, Total_Sale} = req.body;
+    const {Date, Week, Invoice_No, Tin, Quantity, Unit_Price, Calculation, Total_Sale, month} = req.body;
 
     connection.query('SELECT Invoice_No FROM transaction WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
         if(error){
@@ -19,6 +19,7 @@ exports.create = (req,res) =>{
         }
     });
 
+    
     connection.query('INSERT INTO transaction SET ?', {
         Date: Date, 
         Week: Week, 
@@ -27,6 +28,7 @@ exports.create = (req,res) =>{
         Quantity: Quantity, 
         Unit_Price: Unit_Price, 
         Calculation: Calculation, 
+        month: month,
         Total_Sale: Total_Sale}, (error,results)=>{
             if(error){
                 console.log(error);
@@ -39,8 +41,3 @@ exports.create = (req,res) =>{
         }
     )
 }
-
-    
-       
-    
-   
