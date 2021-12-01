@@ -9,9 +9,48 @@
 
     <!-- Bootstrap -->
     <link href="/CSS/create.css" rel="stylesheet">
-    <script src="/JS/create.js"></script>
-    
+    <style>
+      
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
 
+  /* Modal Content */
+  .modal-content {
+    background-color: #797474;
+    margin: auto;
+    margin-top: -70px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+  }
+
+  /* The Close Button */
+  .close {
+    color: #ffffff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+    </style>
+    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body">
@@ -44,9 +83,17 @@
 					<label for="Date">Date</label>
 					<input type="date" id="date" name="Date"></div>
 
-          <div class="col-50">
+          <div class="col-25">
+					<label for="Month">Month</label>
+					<input type="text" id="Month" name="month" placeholder = "e.g. January, February,..." required>
+          </div>
+
+          <div class="col-25">
 					<label for="Week">Week</label>
-					<input type="text" id="Week" name="Week" placeholder = "e.g. Week 1, Week 2" required></div>
+					<input type="text" id="Week" name="Week" placeholder = "e.g. Week 1, Week 2" required>
+          </div>
+
+         
         </div>
 
         <div class="row">
@@ -78,25 +125,68 @@
 					<label for="Total Sale">Total Sale</label>
 					<input type="number" id="Total_Sale" name="Total_Sale" placeholder = "Enter the Total Sale" required></div>
         </div>
+        </div>
 
+         <!-- The Modal -->
+          <div id="myModal" class="modal">
 
-				  </div>
-          <div class="row">
-				  <div class="col-50">
-            <input type="submit" value="Save" class="btn1">
-					</div>
-
-          <div class="col-50">
-            <input type="reset" value="Cancel" class="btn2">
-					</div> 
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span style="font-size: 40px;" class="close">&times;</span>
+              <blockquote style="font-size: 20px;">&emsp;&emsp;Are you sure you want to save this report?</blockquote>
+              <div class="row">
+                <div class="col-50">
+              <input type="submit" value="Save" class="btn3">
+              </div>
+              </div>
+            </div>
           </div>
-				
+
+          
+				</form>
+        <div class="row">
+				  <div class="col-50">
+            <!--<input type="submit" value="Save" class="btn1">-->
+            <button class="btn1" id="myBtn">Save</button>
+					</div>
+           
+          </div>
 
 
-				</div>
-			  </form>
+      </div>
 			</div>
 		  </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+
+    
+      </script>
       
   </body>
 </html>
