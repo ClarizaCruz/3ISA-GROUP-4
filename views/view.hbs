@@ -13,30 +13,32 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body">
-       <a class="navbar-brand" href="homepage"><img src="/images/RFLOGO2.png" width="250px" height="60px"></a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-       </button>
+       <a title="return to homepage" class="navbar-brand" href="homepage"><img src="/images/RFLOGO2.png" width="250px" height="60px"></a>
     </nav><br><br><br><hr>
 
     <div class="sidebar"><br>
-        <a href="create"><i class="far fa-file" style="font-size:40px;color:white"></i><br>Create</a>
+        <a  title="create reports" href="create"><i class="far fa-file" style="font-size:40px;color:white"></i><br>Create</a>
         <a class ="active" href="#"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
-        <a href="viewDay"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Night Mode</a>
+        <a title="change to day mode" href="viewDay"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Night Mode</a><br><br><br><br><br><br><br><br><br>
+        <a title="sign out" href="index" onclick="changeMode()"><i class="fas fa-sign-out-alt" style="font-size:40px;color:white"></i>Sign out</a>
     </div>
 
-
-     <form class="search Dark-mode-body" method="POST" action="/view" novalidate>
-     <div class ="divsearch">
-          <input class="searchbar" type="search" placeholder="Search" name="search" aria-label="Search">
-           <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+    <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body" style="margin-top: -20px; padding-top: 30px">
+     <form method="POST" action="/view" novalidate>
+     <div class ="input-group">
+          <input class="form-control-lg" type="search" placeholder="Search" name="search" aria-label="Search">
+          <div class="input-group-append">
+            <span class="input-group-text"><button title="search" class="btn" type="submit"><i class="fas fa-search"></i></button></span>
+          </div>
+           
       </div>
       </form>
+      </nav>
   
     
 
     <br><br><br><br>
-    <div class="tables">
+    <div class="tables" >
       <table id="myTable" class="table">
   <thead>
     <tr>
@@ -77,6 +79,7 @@
     
   </tbody>
 </table>
+    </div>
 
   
  </body>
