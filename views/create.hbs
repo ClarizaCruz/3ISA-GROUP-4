@@ -53,30 +53,39 @@
     
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body">
-       <a class="navbar-brand" href="homepage"><img src="/images/RFLOGO2.png" width="250px" height="60px"></a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-       </button>
+    <nav class="navbar navbar-expand-lg navbar-dark Dark-mode-body" style="z-index:1;">
+       <a title="return to homepage" class="navbar-brand" href="homepage"><img src="/images/RFLOGO2.png" width="250px" height="60px"></a>
     </nav>
     <br><br><br>
     <hr>
 
     <div class="sidebar"><br>
         <a class ="active" href="#"><i class="far fa-file" style="font-size:40px;color:white"></i><br>Create</a>
-        <a href="view"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
-        <a href="createDay"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Night Mode</a>
+        <a title="view reports" href="view"><i class="far fa-folder-open" style="font-size:40px;color:white"></i>Open</a>
+        <a title="change to day mode" href="createDay"><i class="fas fa-adjust" style="font-size:40px;color:white"></i>Night Mode</a><br><br><br><br><br><br><br><br><br>
+        <a title="sign out" href="index" onclick="changeMode()"><i class="fas fa-sign-out-alt" style="font-size:40px;color:white"></i>Sign out</a>
     </div>
 
         <div class="container bg-custom mt-5 pt-3">
-		
-		<br><h1>Create Reports</h1><hr>
+          {{#if success}}
+          <h6 class="alert alert-success">{{success}}</h6>
+          {{/if}}
 
 			
 		<div class="row1">
 		  <div class="col-75">
 			<div class="container">
 			  <form action="/create" method="POST"><br>
+
+        <div class="row">
+				  <div class="col-75">
+            <br><h1>Create Reports</h1>
+					</div>
+
+          <div class="col-25">
+					<button class = "btn reset" type="reset" title="reset form"><i style ="font-size: 30px;"class="fas fa-undo-alt"></i></button>
+          </div>
+         </div><hr>
 
 				<div class="row">
 				  <div class="col-50">
@@ -147,7 +156,7 @@
         <div class="row">
 				  <div class="col-50">
             <!--<input type="submit" value="Save" class="btn1">-->
-            <button class="btn1" id="myBtn">Save</button>
+            <button title="save report" class="btn1" id="myBtn">Save</button>
 					</div>
            
           </div>
