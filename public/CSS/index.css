@@ -3,19 +3,20 @@ body{
 }
 #outerbox {
     width: 425px;
-    height: 400px;
+    height: 450px;
     text-align: center;
     background-color: #141313;
     margin: auto;
     margin-top: 125px;
     padding-top: 50px;
     border: none;
+    position: static;
 }
 
 #innerbox {
-    position: relative;
+    position: static;
     width: 75%;
-    height: 75%;
+    height: 80%;
     background-color: rgb(93, 94, 95);
     margin: auto;
     border: none; 
@@ -62,3 +63,4 @@ p {
 img{
     margin-top: 10px;
 }
+
