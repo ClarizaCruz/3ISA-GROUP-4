@@ -17,6 +17,7 @@ const app = express();
 let connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
+    port: 3306,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
   });
@@ -53,14 +54,14 @@ app.use('/', VD);
 //login function
 connection.connect((error)=>{
     if (error){
-        console.log("failed");
+        console.log(error);
     }else{
         console.log("connected to the database successfully!");
     }
 });
 
 
-app.get("/index",function(req,res){
+app.get("/",function(req,res){
     res.render("index");
 })
 
@@ -68,8 +69,8 @@ app.post("/",encoder,(req,res) => {
     var username = req.body.username;
     var password = req.body.password;
 
-    connection.query("SELECT * FROM login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
-        if (results.length > 0) {
+    connection.query("SELECT * FROM heroku_321128323da050f.login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
+        if (results != null && results.length < 1) {
             res.redirect("/homepage");
         } else {
             return res.render("index",{
