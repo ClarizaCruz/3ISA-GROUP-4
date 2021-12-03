@@ -57,7 +57,7 @@ connection.connect((error)=>{
 });
 
 
-app.get("/",function(req,res){
+app.get("/index",function(req,res){
     res.render("index");
 })
 
@@ -65,11 +65,13 @@ app.post("/",encoder,(req,res) => {
     var username = req.body.username;
     var password = req.body.password;
 
-    connection.query("SELECT * FROM login WHERE user_name = ? AND user_pass = ?",[username,password],(error,results,fields) => {
+    connection.query("SELECT * FROM login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
         if (results.length > 0) {
             res.redirect("/homepage");
         } else {
-            res.redirect("/");
+            return res.render("index",{
+                message: 'Login Failed: Incorrect login credentials'
+            })
         }
         res.end();
     })
