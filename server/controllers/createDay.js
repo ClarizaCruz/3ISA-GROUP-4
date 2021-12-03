@@ -32,15 +32,12 @@ exports.create = (req,res) =>{
                 console.log(error);
             }else{
                 
-                res.redirect('/createDay');
+                return res.render("createDay",{
+                    success: "You've have successfully created a report"
+                })
                 
                 
             }
         }
     )
 }
-
-    
-       
-    
-   
