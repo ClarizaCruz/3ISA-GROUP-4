@@ -10,7 +10,7 @@ const encoder = bodyParser.urlencoded();
 require('dotenv').config();
 
 //dotenv.config({path: './.env'});
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 const app = express();
 
 //database connection
@@ -52,8 +52,11 @@ app.use('/', VD);
 
 //login function
 connection.connect((error)=>{
-    if (error) throw error
-    else console.log("connected to the database successfully!")
+    if (error){
+        console.log("failed");
+    }else{
+        console.log("connected to the database successfully!");
+    }
 });
 
 
