@@ -33,11 +33,13 @@ exports.create = (req,res) =>{
             if(error){
                 console.log(error);
             }else{
-                
-                res.redirect('/create');
+                return res.render("create",{
+                    success: "You've have successfully created a report"
+                })
                 
                 
             }
         }
     )
 }
+
