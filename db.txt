@@ -1,1 +1,13 @@
 mysql://b474dd0455b69d:07883329@us-cdbr-east-04.cleardb.com/heroku_321128323da050f?reconnect=true
+
+//for server
+DB_HOST = us-cdbr-east-04.cleardb.com
+DB_NAME = heroku_321128323da050f
+DB_USER = b474dd0455b69d
+DB_PASS = 07883329
+
+//for localhost
+DB_HOST = localhost
+DB_NAME = transactions
+DB_USER = root
+DB_PASS = Clariza0421!

@@ -12,25 +12,26 @@ let connection = mysql.createConnection({
 exports.create = (req,res) =>{
     console.log(req.body);
 
-    const {date, week, Invoice_No, Tin, Quantity, Unit_Price, Calculation, Total_Sale, month} = req.body;
+    const {date, week, Invoice_No, Quantity, Unit_Price, Calculation, Total_Sale, month, Total_Vat, Total_Amount_Receivable } = req.body;
 
-    connection.query('SELECT Invoice_No FROM heroku_321128323da050f.transaction WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
+    connection.query('SELECT Invoice_No FROM heroku_321128323da050f.transactions WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
         if(error){
             console.log(error);
         }
     });
 
     
-    connection.query('INSERT INTO heroku_321128323da050f.transaction SET ?', {
+    connection.query('INSERT INTO heroku_321128323da050f.transactions SET ?', {
         Date: date, 
         Week: week, 
-        Invoice_No: Invoice_No , 
-        Tin: Tin, 
+        Invoice_No: Invoice_No ,  
         Quantity: Quantity, 
         Unit_Price: Unit_Price, 
         Calculation: Calculation, 
         month: month,
-        Total_Sale: Total_Sale}, (error,results)=>{
+        Total_Sale: Total_Sale,
+        Total_Vat: Total_Vat,
+        Total_Amount_Receivable: Total_Amount_Receivable}, (error,results)=>{
             if(error){
                 console.log(error);
             }else{

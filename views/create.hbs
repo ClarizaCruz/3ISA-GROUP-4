@@ -90,7 +90,7 @@
 				<div class="row">
 				  <div class="col-50">
 					<label for="Date">Date</label>
-					<input type="date" id="date" name="Date"></div>
+					<input type="date" id="date" name="date"></div>
 
           <div class="col-25">
 					<label for="Month">Month</label>
@@ -99,7 +99,7 @@
 
           <div class="col-25">
 					<label for="Week">Week</label>
-					<input type="text" id="Week" name="Week" placeholder = "e.g. Week 1, Week 2" required>
+					<input type="text" id="Week" name="week" placeholder = "e.g. Week 1, Week 2" required>
           </div>
 
          
@@ -111,29 +111,36 @@
 					<input type="text" id="Invoice_No" name="Invoice_No" placeholder = "Enter Sales Invoice No." required></div>
 
           <div class="col-50">
-					<label for="Tin">Tin</label>
-					<input type="text" id="Tin" name="Tin" placeholder = "Enter Tin" required></div>
+					<label for="Tin">Quantity</label>
+					<input type="text" id="Quantity" name="Quantity" placeholder = "Enter the Quantity" required></div>
         </div>
 
         <div class="row">
 				  <div class="col-50">
-					<label for="Quantity">Quantity</label>
-					<input type="text" id="Quantity" name="Quantity" placeholder = "Enter the Quantity" required></div>
-
-          <div class="col-50">
 					<label for="Unit Price">Unit Price</label>
 					<input type="text" id="Unit_Price" name="Unit_Price" placeholder = "Enter the Unit Price" required></div>
+					
+
+          <div class="col-50">
+            <label for="Calculation">Calculation</label>
+					<input type="text" id="Calculation" name="Calculation" placeholder = "Enter the Calculation" required></div>
+					
         </div>
 
         <div class="row">
-				  <div class="col-50">
-					<label for="Calculation">Calculation</label>
-					<input type="text" id="Calculation" name="Calculation" placeholder = "Enter the Calculation" required></div>
-
           <div class="col-50">
 					<label for="Total Sale">Total Sale</label>
 					<input type="number" id="Total_Sale" name="Total_Sale" placeholder = "Enter the Total Sale" required></div>
-        </div>
+        
+
+				  <div class="col-25">
+            <label for="Total Sale">Total Vat</label>
+					<input type="number" id="Total_Vat" name="Total_Vat" placeholder = "Enter the Total Vat" required></div>
+
+          <div class="col-25">
+            <label for="Total Sale">Total Amount Receivable</label>
+					<input type="number" id="Total_Amount_Receivable" name="Total_Amount_Receivable" placeholder = "Enter the Total Amount Receivable" required></div>
+					 </div>
         </div>
 
          <!-- The Modal -->
