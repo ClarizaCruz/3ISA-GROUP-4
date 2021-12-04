@@ -69,7 +69,7 @@ app.post("/",express.urlencoded({ extended: true}),(req,res) => {
     var username = req.body.username;
     var password = req.body.password;
 
-    connection.query("SELECT * FROM heroku_321128323da050f.login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
+    connection.query("SELECT * FROM login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
         if (results !== null && results.length > 0) {
             res.redirect("/homepage");
         } else {

@@ -11,7 +11,7 @@ let connection = mysql.createConnection({
 // View Users
 exports.view = (req, res) => {
   // User the connection
-  connection.query('SELECT * FROM heroku_321128323da050f.transaction WHERE status = "Active"', (err, rows) => {
+  connection.query('SELECT * FROM transactions WHERE status = "Active"', (err, rows) => {
     // When done with the connection, release it
     if (!err) {
       let removedUser = req.query.removed;
@@ -19,19 +19,19 @@ exports.view = (req, res) => {
     } else {
       console.log(err);
     }
-    console.log('The data from transaction table: \n', rows);
+    console.log('The data from transactions table: \n', rows);
   });
 }
 
 exports.find = (req, res) => {
   let searchTerm = req.body.search;
   // User the connection
-  connection.query('SELECT * FROM heroku_321128323da050f.transaction WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
+  connection.query('SELECT * FROM transactions WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
     if (!err) {
       res.render('view', { rows });
     } else {
       console.log(err);
     }
-    console.log('The data from transaction table: \n', rows);
+    console.log('The data from transactions table: \n', rows);
   });
 }
