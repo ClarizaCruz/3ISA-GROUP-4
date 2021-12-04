@@ -11,7 +11,7 @@ let connection = mysql.createConnection({
 // View Users
 exports.view = (req, res) => {
   // User the connection
-  connection.query('SELECT * FROM transactions WHERE status = "Active"', (err, rowD) => {
+  connection.query('SELECT * FROM heroku_321128323da050f.transactions WHERE status = "Active"', (err, rowD) => {
     // When done with the connection, release it
     if (!err) {
       let removedUser = req.query.removed;
@@ -26,7 +26,7 @@ exports.view = (req, res) => {
 exports.find = (req, res) => {
   let searchTerm = req.body.search;
   // User the connection
-  connection.query('SELECT * FROM transactions WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rowD) => {
+  connection.query('SELECT * FROM heroku_321128323da050f.transactions WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rowD) => {
     if (!err) {
       res.render('viewDay', { rowD });
     } else {
