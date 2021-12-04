@@ -1,9 +1,11 @@
 const mysql = require('mysql');
 
-// Connection Pool
-let connection = mysql.createConnection({
+//database connection
+let pool = mysql.createPool({
+  connectionLimit: 100,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
+  port: 3306,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME
 });
@@ -11,7 +13,7 @@ let connection = mysql.createConnection({
 // View Users
 exports.view = (req, res) => {
   // User the connection
-  connection.query('SELECT * FROM heroku_321128323da050f.transactions WHERE status = "Active"', (err, rows) => {
+  pool.query('SELECT * FROM heroku_321128323da050f.transactions WHERE status = "Active"', (err, rows) => {
     // When done with the connection, release it
     if (!err) {
       let removedUser = req.query.removed;
@@ -26,7 +28,7 @@ exports.view = (req, res) => {
 exports.find = (req, res) => {
   let searchTerm = req.body.search;
   // User the connection
-  connection.query('SELECT * FROM heroku_321128323da050f.transactions WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
+  pool.query('SELECT * FROM heroku_321128323da050f.transactions WHERE month LIKE ? OR Week LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
     if (!err) {
       res.render('view', { rows });
     } else {

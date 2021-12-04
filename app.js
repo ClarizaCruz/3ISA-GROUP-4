@@ -14,7 +14,8 @@ const port = process.env.PORT || 5000
 const app = express();
 
 //database connection
-let connection = mysql.createConnection({
+let pool = mysql.createPool({
+    connectionLimit: 100,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     port: 3306,
@@ -52,13 +53,13 @@ const VD = require('./server/routes/viewDay');
 app.use('/', VD);
 
 //login function
-connection.connect((error)=>{
+/*pool.query((error)=>{
     if (error){
         console.log(error);
     }else{
         console.log("connected to the database successfully!");
     }
-});
+});*/
 
 
 app.get("/",function(req,res){
@@ -69,7 +70,7 @@ app.post("/",express.urlencoded({ extended: true}),(req,res) => {
     var username = req.body.username;
     var password = req.body.password;
 
-    connection.query("SELECT * FROM heroku_321128323da050f.login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
+    pool.query("SELECT * FROM heroku_321128323da050f.login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
         if (results !== null && results.length > 0) {
             res.redirect("/homepage");
         } else {

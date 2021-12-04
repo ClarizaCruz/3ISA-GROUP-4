@@ -1,7 +1,8 @@
 const mysql = require('mysql');
 
-//connect the node app with MySql server
-let connection = mysql.createConnection({
+//database connection
+let pool = mysql.createPool({
+    connectionLimit: 100,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     port: 3306,
@@ -14,13 +15,13 @@ exports.create = (req,res) =>{
 
     const {date, week, Invoice_No, Quantity, Unit_Price, Calculation, Total_Sale, month, Total_Vat, Total_Amount_Receivable } = req.body;
 
-    connection.query('SELECT Invoice_No FROM heroku_321128323da050f.transactions WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
+    pool.query('SELECT Invoice_No FROM heroku_321128323da050f.transactions WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
         if(error){
             console.log(error);
         }
     });
 
-    connection.query('INSERT INTO heroku_321128323da050f.transactions SET ?', {
+    pool.query('INSERT INTO heroku_321128323da050f.transactions SET ?', {
         date: date, 
         week: week, 
         Invoice_No: Invoice_No , 
