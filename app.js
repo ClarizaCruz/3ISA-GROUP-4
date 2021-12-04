@@ -1,10 +1,10 @@
 //imports
 const express =  require('express');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 const path = require('path');
 const mysql = require('mysql');
-const encoder = bodyParser.urlencoded();
+//const encoder = express.urlencoded();
 
 
 require('dotenv').config();
@@ -65,12 +65,12 @@ app.get("/",function(req,res){
     res.render("index");
 })
 
-app.post("/",encoder,(req,res) => {
+app.post("/",express.urlencoded({ extended: true}),(req,res) => {
     var username = req.body.username;
     var password = req.body.password;
 
     connection.query("SELECT * FROM heroku_321128323da050f.login WHERE BINARY user_name = ? AND BINARY user_pass = ?",[username,password],(error,results,fields) => {
-        if (results != null && results.length < 1) {
+        if (results !== null && results.length > 0) {
             res.redirect("/homepage");
         } else {
             return res.render("index",{

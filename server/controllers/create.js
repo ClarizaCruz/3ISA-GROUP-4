@@ -4,6 +4,7 @@ const mysql = require('mysql');
 let connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
+    port: 3306,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
   });
@@ -13,14 +14,14 @@ exports.create = (req,res) =>{
 
     const {date, week, Invoice_No, Tin, Quantity, Unit_Price, Calculation, Total_Sale, month} = req.body;
 
-    connection.query('SELECT Invoice_No FROM transaction WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
+    connection.query('SELECT Invoice_No FROM heroku_321128323da050f.transaction WHERE Invoice_No = ?', [Invoice_No], (error, results)=>{
         if(error){
             console.log(error);
         }
     });
 
     
-    connection.query('INSERT INTO transaction SET ?', {
+    connection.query('INSERT INTO heroku_321128323da050f.transaction SET ?', {
         Date: date, 
         Week: week, 
         Invoice_No: Invoice_No , 

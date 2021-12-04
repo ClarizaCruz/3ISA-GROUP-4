@@ -70,8 +70,8 @@
             <td>{{this.Unit_Price}}</td>
             <td>{{this.Calculation}}</td>
             <td>{{this.Total_Sale}}</td>
-            <td>{{this.Total_Vat}}</td>
-            <td>{{this.Total_Amount_Receivable}}</td>
+            <td>{{this.Total_Sale * 0.12}}</td>
+            <td>{{this.Total_Sale*0.12 + this.Total_Sale}}</td>
     </tr>
 
     {{/each}}

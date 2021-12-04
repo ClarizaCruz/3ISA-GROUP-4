@@ -42,7 +42,6 @@
       <table id="myTable" class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Date</th>
       <th scope="col">Week</th>
       <th scope="col">Sales<br>Invoice No.</th>
@@ -61,8 +60,7 @@
 
     {{#each rows}}
     <tr>
-      <th scope="row">{{this.Transaction_ID}}</th>
-      <td>{{this.date}}</td>
+            <td>{{this.date}}</td>
             <td>{{this.week}}</td>
             <td>{{this.Invoice_No}}</td>
             <td>{{this.Tin}}</td>
@@ -71,8 +69,8 @@
             <td>{{this.Unit_Price}}</td>
             <td>{{this.Calculation}}</td>
             <td>{{this.Total_Sale}}</td>
-            <td>{{this.Total_Vat}}</td>
-            <td>{{this.Total_Amount_Receivable}}</td>
+            <td>{{this.Total_Sale * 0.12}}</td>
+            <td>{{this.Total_Sale*0.12 + this.Total_Sale}}</td>
     </tr>
 
     {{/each}}
